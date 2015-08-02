@@ -13,15 +13,15 @@ The radius of each circle is the (approximate) distance to the beacon. Let call 
 
 Each circle's formula would look like this:
 
-![Formula Circle](https://github.com/philplckthun/trilateration/raw/master/img/circle.png)
+![Formula Circle](https://github.com/philplckthun/lateration/raw/master/img/circle.png)
 
 Substracting two circles would give a linear equation, which crosses their two intersections:
 
-![Linear Equation from Subtraction](https://github.com/philplckthun/trilateration/raw/master/img/linearfunction.png)
+![Linear Equation from Subtraction](https://github.com/philplckthun/lateration/raw/master/img/linearfunction.png)
 
 Calculating the intersection of two of these linear equations gives the x-value of the devices position in between the beacons.
 
-![Calculate x-value via intersecting](https://github.com/philplckthun/trilateration/raw/master/img/calculateX.png)
+![Calculate x-value via intersecting](https://github.com/philplckthun/lateration/raw/master/img/calculateX.png)
 
 This value can then be inserted in one of the two linear equations to get the corresponding y-value.
 
