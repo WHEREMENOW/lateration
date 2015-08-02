@@ -11,6 +11,31 @@ export default function intersectLines(a, b) {
     return null;
   }
 
+  // Is `a` vertical and `b` valid?
+  if (
+    !isNumber(a.slope) && !isNumber(a.intercept) &&
+    isNumber(b.slope) && isNumber(b.intercept)
+  ) {
+    return new Vector(0, b.solve(0));
+  }
+
+  // Is `b` vertical and `a` valid?
+  if (
+    !isNumber(b.slope) && !isNumber(b.intercept) &&
+    isNumber(a.slope) && isNumber(a.intercept)
+  ) {
+    return new Vector(0, a.solve(0));
+  }
+
+  // Are `a` or `b` invalid?
+  if (
+    !isNumber(a.slope) || !isNumber(a.intercept) ||
+    !isNumber(b.slope) || !isNumber(b.intercept)
+  ) {
+    return null;
+  }
+
+  // Are `a` and `b` parallel to each other?
   if (a.intercept === b.intercept) {
     return new Vector(0, a.intercept);
   }
@@ -18,6 +43,7 @@ export default function intersectLines(a, b) {
   const x = (b.intercept - a.intercept) / (a.slope - b.slope);
   const y = a.solve(x);
 
+  // Is the result not NaN (division by zero)
   if (!isNumber(x) || !isNumber(y)) {
     return null;
   }
