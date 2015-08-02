@@ -1,6 +1,6 @@
 {
   "name": "lateration",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Calculating a position using distances from points.",
   "main": "lib/index.js",
   "dependencies": {
